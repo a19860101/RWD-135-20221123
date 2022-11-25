@@ -16,10 +16,42 @@
             margin-right: auto;
             display: flex;
             flex-wrap: wrap;
+            justify-content: end;
+            /* 
+                flex-start(start),center,flex-end(end)
+                space-around,space-between,space-around
+            */
+
+            background-color: #ccc;
         }
         .box {
-            width: 50%;
+            width: 20%;
             padding:15px;
+        }
+        .container-2 {
+            width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+            display: flex;
+            flex-wrap: nowrap;
+            align-items: center;
+            /* 
+                flex-start(start),center,flex-end(end)
+                stretch , baseline
+            */
+
+        }
+        .gallery {
+            width: 50%;
+           
+        }
+        /* 後代選取器 */
+        .gallery img {
+            width: 100%;
+        }
+        .content {
+            width: 50%;
+            padding: 15px;
         }
     </style>
     
@@ -27,27 +59,33 @@
 <body>
     <div class="container">
         <div class="box">
-            <h2>title</h2>
+            <h2>title 1</h2>
             <p>
                 一顆顯卡一條，有可能，感受第二章互動國內外寶貝，你還絶對，主管軟體以外導致感興趣從事身體母親笑着，給予智能交流，線路父親激情刷新神經遠遠親自寫出來內地我是國外，高速遺憾告訴我參與難得，勝利方向類型剛才緊張現金馬上，瀏覽器唱片需求光臨傳輸台北，貸款青草湖曝。
             </p>
         </div>
         <div class="box">
-            <h2>title</h2>
+            <h2>title 2</h2>
             <p>
                 一顆顯卡一條，有可能，感受第二章互動國內外寶貝，你還絶對，主管軟體以外導致感興趣從事身體母親笑着，給予智能交流，線路父親激情刷新神經遠遠親自寫出來內地我是國外，高速遺憾告訴我參與難得，勝利方向類型剛才緊張現金馬上，瀏覽器唱片需求光臨傳輸台北，貸款青草湖曝。
             </p>
         </div>
         <div class="box">
-            <h2>title</h2>
+            <h2>title 3</h2>
             <p>
                 一顆顯卡一條，有可能，感受第二章互動國內外寶貝，你還絶對，主管軟體以外導致感興趣從事身體母親笑着，給予智能交流，線路父親激情刷新神經遠遠親自寫出來內地我是國外，高速遺憾告訴我參與難得，勝利方向類型剛才緊張現金馬上，瀏覽器唱片需求光臨傳輸台北，貸款青草湖曝。
             </p>
         </div>
-        <div class="box">
+        
+    </div>
+    <div class="container-2">
+        <div class="gallery">
+            <img src="https://picsum.photos/id/89/800/600" alt="">
+        </div>
+        <div class="content">
             <h2>title</h2>
             <p>
-                一顆顯卡一條，有可能，感受第二章互動國內外寶貝，你還絶對，主管軟體以外導致感興趣從事身體母親笑着，給予智能交流，線路父親激情刷新神經遠遠親自寫出來內地我是國外，高速遺憾告訴我參與難得，勝利方向類型剛才緊張現金馬上，瀏覽器唱片需求光臨傳輸台北，貸款青草湖曝。
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda temporibus sapiente laudantium perferendis repellat repellendus odio praesentium cupiditate, explicabo quidem dolores molestiae molestias quaerat facere, eos labore ex. Nemo, quo!
             </p>
         </div>
     </div>
