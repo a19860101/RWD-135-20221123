@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        * {
+            box-sizing: border-box;
+        }
         .box {
             width: 200px;
             /* height: 300px; */
@@ -58,11 +61,11 @@
             /* padding-block-end:; */
             
             /* Border 邊框*/
-            /* border: solid #fa0 5px; */
-            border-left: solid #0af 5px;
-            border-right: dashed #ff5e00 25px;
-            border-top: solid #00ff4c 15px;
-            border-bottom: dotted #ff00dd 5px;
+            border: solid #fa0 5px;
+            /* border-left: solid #0af 5px; */
+            /* border-right: dashed #ff5e00 25px; */
+            /* border-top: solid #00ff4c 15px; */
+            /* border-bottom: dotted #ff00dd 5px; */
             /* 寬度 樣式 顏色(順序不拘) */
 
             /* border-width: 5px; */
@@ -90,6 +93,15 @@
                 solid, double, dotted, dashed
                 inset, outset, groove, ridge
             */
+
+            /* 
+                預設狀態下
+                總寬度 = width + padding + border
+                總高度 = height + padding + border
+            */
+
+            /* box-sizing: border-box; */
+            /* border-box, content-box */
         }
     </style>
 </head>
