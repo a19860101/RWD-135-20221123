@@ -23,6 +23,9 @@
             background-color: #222;
             text-align: center;
             padding-block: 12px;
+
+            position: fixed;
+            width: 100%;
         }
         nav a {
             text-decoration: none;
@@ -41,6 +44,23 @@
         #service {background-color: #30ff80;}
         #portfolio {background-color: #55c5ee;}
         #contact {background-color: #5d35ff;}
+        .gotop {
+            width: 60px;
+            height: 60px;
+            background-color: #222222;
+            display: block;
+            color: #fff;
+            text-decoration: none;
+            text-align: center;
+            line-height: 60px;
+            /* display: flex; */
+            /* align-items: center; */
+            /* justify-content: center; */
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            border-radius: 50%;
+        }
     </style>
 </head>
 <body>
@@ -50,9 +70,10 @@
         <a href="#portfolio">作品集</a>
         <a href="#contact">聯絡我們</a>
     </nav>
-    <section id="about"><a href="#">top</a></section>
-    <section id="service"><a href="#">top</a></section>
-    <section id="portfolio"><a href="#">top</a></section>
-    <section id="contact"><a href="#">top</a></section>
+    <section id="about"></section>
+    <section id="service"></section>
+    <section id="portfolio"></section>
+    <section id="contact"></section>
+    <a href="#" class="gotop">TOP</a>
 </body>
 </html>
