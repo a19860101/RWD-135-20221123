@@ -26,6 +26,7 @@
 
             position: fixed;
             width: 100%;
+            z-index: 999;
         }
         nav a {
             text-decoration: none;
@@ -61,6 +62,39 @@
             bottom: 20px;
             border-radius: 50%;
         }
+        header {
+            width: 100%;
+            height: 600px;
+            position: relative;
+            /* background-image: url('https://picsum.photos/id/237/1200/1000');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover; */
+        }
+        header img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+
+        }
+        .header-content {
+            width: 550px;
+            height: fit-content;
+            background-color: rgb(255 255 255 / .4);
+
+            position: absolute;
+            /* top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0; */
+            inset:0;
+            margin:auto;
+            /* top:calc(50% - 150px);
+            left: calc(50% - 225px); */
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+        }
     </style>
 </head>
 <body>
@@ -70,6 +104,15 @@
         <a href="#portfolio">作品集</a>
         <a href="#contact">聯絡我們</a>
     </nav>
+    <header>
+        <img src="https://picsum.photos/id/237/1200/1000" alt="">
+        <div class="header-content">
+            <h1>HELLO WORLD!!</h1>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, reprehenderit! Porro eum libero veniam repellat doloremque sunt in assumenda repudiandae?
+            </p>
+        </div>
+    </header>
     <section id="about"></section>
     <section id="service"></section>
     <section id="portfolio"></section>
