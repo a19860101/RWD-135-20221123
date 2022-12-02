@@ -37,11 +37,6 @@
         }
         section {
             width: 100%;
-            height: 100vh;
-
-            display: flex;
-            justify-content: center;
-            align-items: center;
         }
         #about {background-color: #ff9696;}
         #service {background-color: #30ff80;}
@@ -130,6 +125,39 @@
             right: -35px;
             top: -35px;
         }
+        .container {
+            width: 1200px;
+            margin-inline: auto;
+        }
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            height: 100vh;
+            align-items: center;
+        }
+        img {
+            width: 100%;
+            display: block;
+        }
+        .about-col {
+            width: 25%;
+            padding: 15px;
+        }
+        .card {
+            box-shadow: 1px 4px 10px 0 rgb(0 0 0 / .4);
+            border-radius: 8px;
+        }
+        .card-body {
+            padding: 12px;
+            background-color: #ffd5d5;
+            border-radius: 0 0 7px 7px;
+            /* 左上 右上 右下 左下 */
+            overflow: hidden;
+        }
+        .card-img {
+            overflow: hidden;
+            border-radius: 7px 7px 0 0;
+        }
     </style>
 </head>
 <body>
@@ -151,7 +179,68 @@
         <!-- <a href="#about" class="circle"><i class="fa-solid fa-chevron-down"></i></a> -->
         <a href="#about" class="circle"><i class="las la-chevron-down"></i></a>
     </header>
-    <section id="about"></section>
+    <section id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col">
+                    <div class="card">
+                        <div class="card-img">
+                            <img src="https://picsum.photos/id/99/800/600" alt="">
+                        </div>
+                        <div class="card-body">
+                            <h3>服務項目</h3>
+                            <p>
+                                尺寸到了特價字幕，路線或是中壢，手上頓時使得你想他說，不足。
+                            </p>
+                            <a href="#">更多</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-col">
+                    <div class="card">
+                        <div class="card-img">
+                            <img src="https://picsum.photos/id/9/800/600" alt="">
+                        </div>
+                        <div class="card-body">
+                            <h3>服務項目</h3>
+                            <p>
+                                尺寸到了特價字幕，路線或是中壢，手上頓時使得你想他說，不足。
+                            </p>
+                            <a href="#">更多</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-col">
+                    <div class="card">
+                        <div class="card-img">
+                            <img src="https://picsum.photos/id/69/800/600" alt="">
+                        </div>
+                        <div class="card-body">
+                            <h3>服務項目</h3>
+                            <p>
+                                尺寸到了特價字幕，路線或是中壢，手上頓時使得你想他說，不足。
+                            </p>
+                            <a href="#">更多</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-col">
+                    <div class="card">
+                        <div class="card-img">
+                            <img src="https://picsum.photos/id/24/800/600" alt="">
+                        </div>
+                        <div class="card-body">
+                            <h3>服務項目</h3>
+                            <p>
+                                尺寸到了特價字幕，路線或是中壢，手上頓時使得你想他說，不足。
+                            </p>
+                            <a href="#">更多</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
     <section id="service"></section>
     <section id="portfolio"></section>
     <section id="contact"></section>
