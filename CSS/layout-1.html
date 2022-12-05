@@ -129,6 +129,10 @@
             width: 1200px;
             margin-inline: auto;
         }
+        .small-container {
+            width: 750px;
+            margin-inline: auto;
+        }
         .row {
             display: flex;
             flex-wrap: wrap;
@@ -216,6 +220,35 @@
         .folio-col {
             width: 20%;
             padding:5px
+        }
+        /* contact */
+        #contact {
+            padding-block: 200px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-label {
+            margin-bottom:5px;
+            color: #d2efff;
+            display: block;
+        }
+        .form-control {
+            width: 100%;
+            padding: 10px;
+            outline: 0;
+            border:0;
+            border-radius: 5px;
+        }
+        .btn {
+            display: inline-block;
+            padding-inline: 30px;
+            padding-block:8px;
+            background-color: #fa0;
+            border: 0;
+            font-size: 16px;
+            cursor: pointer;
+
         }
     </style>
 </head>
@@ -381,7 +414,31 @@
             </div>
         </div>
     </section>
-    <section id="contact"></section>
+    <section id="contact">
+        <div class="small-container">
+            <form action="">
+                <div class="form-group">
+                    <label for="" class="form-label">姓名</label>
+                    <input type="text" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="" class="form-label">電話</label>
+                    <input type="text" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="" class="form-label">Email</label>
+                    <input type="text" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="" class="form-label">內容</label>
+                    <textarea name="" id="" cols="30" rows="10" class="form-control"></textarea>
+                </div>
+                <div>
+                    <input type="submit" value="送出" class="btn">
+                </div>
+            </form>
+        </div>
+    </section>
     <!-- <a href="#" class="gotop"><i class="fa-solid fa-chevron-up"></i></a> -->
     <a href="#" class="gotop"><i class="las la-chevron-up"></i></a>
 </body>
