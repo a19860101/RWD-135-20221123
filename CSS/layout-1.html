@@ -165,14 +165,17 @@
             height: 400px
         }
         .card {
-            box-shadow: 1px 4px 10px 0 rgb(0 0 0 / .4);
+            box-shadow: 1px 1px 10px 0 rgb(0 0 0 / .4);
             border-radius: 8px;
             border: 1px solid #555;
             overflow: hidden;
             display: flex;
             flex-direction: column;
             height: 100%;
-           
+            transition: 500ms;
+        }
+        .card:hover {
+            box-shadow: 1px 5px 10px 4px rgb(0 0 0 / .3);
         }
         .card-body {
             padding: 12px;
