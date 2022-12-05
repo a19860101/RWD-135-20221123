@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            perspective: 800px;
+            height: 100vh;
+        }
+        .box {
+            width: 200px;
+            /* height: 200px; */
+           
+            background-color: #f80;
+            position: fixed;
+
+            /* 當高度確定時 */
+            /* inset:0; */
+            /* margin: auto; */
+
+            /* 當高度未知時 */
+            /* top:50%; */
+            /* left: 50%; */
+            /* transform: translate(-50%,-50%); */
+
+            /* 當高度不確定時，可以讓高度設定fit-content */
+            height: fit-content;
+            inset:0;
+            margin: auto;
+
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, explicabo mollitia. Cumque quos, voluptates ipsum adipisci repellat voluptatibus, consequatur ea inventore nihil aliquid asperiores at dignissimos, ipsam eius! Veritatis, a.
+    </div>
+</body>
+</html>
