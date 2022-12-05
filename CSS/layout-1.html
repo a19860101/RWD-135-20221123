@@ -132,12 +132,15 @@
         .row {
             display: flex;
             flex-wrap: wrap;
-            height: 100vh;
+            /* height: 100vh; */
             align-items:center;
         }
         img {
             width: 100%;
             display: block;
+        }
+        #about {
+            padding-block: 200px;
         }
         .about-col {
             width: 25%;
@@ -178,7 +181,26 @@
             /* overflow: hidden; */
             /* border-radius: 7px 7px 0 0; */
         }
-
+        /* service */
+        #service {
+            padding-block: 200px
+        }
+        .service-img {
+            width: 70%;
+        }
+        .service-img:nth-of-type(3){
+            order:2;
+        }
+        .service-content:nth-of-type(4){
+            order:1;
+        }
+        /* 
+            使用order時，會先處理自然排序（未使用order）
+        */
+        .service-content {
+            width: 30%;
+            padding-inline: 30px;
+        }
     </style>
 </head>
 <body>
@@ -262,7 +284,31 @@
             </div>
         </div>
     </section>
-    <section id="service"></section>
+    <section id="service">
+        <div class="container">
+            <div class="row">
+                <div class="service-img">
+                    <img src="https://picsum.photos/id/98/800/600" alt="">
+                </div>
+                <div class="service-content">
+                    <h2>title</h2>
+                    <p>
+                        電腦一切哪裡驅動其他，不斷再度不到使得，歡迎中學演唱人員也就如果環保總經理，照片不要改變便宜飛機姑娘上下雜誌建築富岡，以為執行時間是什麼降低傳輸申請可以說我的，觀看連續考試好像法規太陽喜歡合適沒有發生都有權威只是，市場價協助你還體育，也可個性看了一人，性。
+                    </p>
+                </div>
+                <div class="service-img">
+                    <img src="https://picsum.photos/id/98/800/600" alt="">
+                </div>
+                <div class="service-content">
+                    <h2>title</h2>
+                    <p>
+                        電腦一切哪裡驅動其他，不斷再度不到使得，歡迎中學演唱人員也就如果環保總經理，照片不要改變便宜飛機姑娘上下雜誌建築富岡，以為執行時間是什麼降低傳輸申請可以說我的，觀看連續考試好像法規太陽喜歡合適沒有發生都有權威只是，市場價協助你還體育，也可個性看了一人，性。
+                    </p>
+                </div>
+               
+            </div>
+        </div>
+    </section>
     <section id="portfolio"></section>
     <section id="contact"></section>
     <!-- <a href="#" class="gotop"><i class="fa-solid fa-chevron-up"></i></a> -->
