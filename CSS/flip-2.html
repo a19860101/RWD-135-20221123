@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .flip {
+            width: 200px;
+            height: 300px;
+
+            position: relative;
+            perspective: 600px;
+        }
+        /* 群組選取器 */
+        .front,.back {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            transform-origin: left;
+        }
+        .front {
+            background-color: #ffdb4c;
+            transition: 500ms;
+        }
+        .back {
+            background-color: #6f00af;
+            transform: rotateY(270deg);
+            backface-visibility: hidden;
+            transition: 500ms;
+            opacity: 0;
+        }
+
+        .flip:hover .front {
+            transform: rotateY(30deg);
+            opacity: 0;
+        }
+        .flip:hover .back {
+            transform: rotateY(360deg);
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="flip">
+        <div class="front"><img src="https://picsum.photos/id/34/200/300" alt=""></div>
+        <div class="back">BACK</div>
+    </div>
+</body>
+</html>
