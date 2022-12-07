@@ -14,19 +14,23 @@
             margin: auto;
             background-color: #ff4b8a;
 
-            transition: 500ms;
-            /* transition-property: width,height, background-color; */
-            /* transition-duration: 500ms; */
-            /* transition-delay: 0ms, 500ms, 1000ms; */
-            transition-timing-function: linear;
+            /* transition: 500ms; */
+            transition-property: width,height, background-color;
+            transition-duration: 500ms;
+            transition-delay: 1000ms, 500ms, 0ms;
+            transition-timing-function: ease;
             /* ease, ease-in, ease-out, ease-in-out, linear */
         }
 
         .box:hover {
-            /* width: 200px; */
-            /* height: 200px; */
-            /* background-color: #098; */
-            transform: scaleY(8);
+            width: 200px;
+            height: 200px;
+            background-color: #098;
+
+            /* transition-property: width,height, background-color; */
+            /* transition-duration: 500ms; */
+            transition-delay: 0ms, 500ms, 1000ms;
+            /* transition-timing-function: ease; */
         }
     </style>
 </head>
