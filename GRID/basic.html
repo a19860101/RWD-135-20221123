@@ -6,12 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        * {
+            box-sizing: border-box;
+        }
         .container {
             width: 1200px;
+            margin-inline: auto;
             background-color: #ccc;
             display: grid;
-            grid-template-columns: 1fr 1fr 1fr 1fr;
-            /* grid-template-rows: 100px; */
+            grid-template-columns: repeat(5,1fr);
+            /* grid-template-rows: repeat(2, 200px); */
+            grid-auto-rows: 200px;
+            /* grid-auto-columns: ; */
+            /* grid-auto-flow: ; */
             gap: 10px;
         }
         .item {
@@ -28,11 +35,14 @@
         <div class="item item-3">item 3</div>
         <div class="item item-4">item 4</div>
         <div class="item item-5">item 5</div>
-        <div class="item item-6">item 6</div>
+        <div class="item item-6">item 6 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam, iste.</div>
         <div class="item item-7">item 7</div>
         <div class="item item-8">item 8</div>
-        <div class="item item-9">item 9</div>
+        <div class="item item-9">item 9 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo consequatur veritatis quam corrupti repudiandae rem id, est officia dicta repellendus?</div>
         <div class="item item-10">item 10</div>
+        <div class="item item-11">item 11</div>
+        <div class="item item-12">item 12</div>
+        <div class="item item-13">item 13</div>
     </div>
 </body>
 </html>
