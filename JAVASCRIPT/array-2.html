@@ -69,6 +69,18 @@
             return data.price >= 20;
         })
         console.log(drink_every);
+
+        // find 判斷陣列內是否有符合規則的資料，有就回傳第一筆資料，沒有就回傳undefined
+        const drink_find = drinks.find(function(data){
+            return data.price === '10';
+        })
+        console.log(drink_find);
+
+        // findIndex 判斷陣列內是否有符合規則的資料，有就回傳第一筆資料索引，沒有就回傳-1
+        const drink_findIndex = drinks.findIndex(function(data){
+            return data.price === '30';
+        })
+        console.log(drink_findIndex);
     </script>
 </body>
 </html>
