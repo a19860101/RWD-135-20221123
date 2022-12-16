@@ -46,6 +46,18 @@
         console.log(drink_name);
         console.log(drink_price);
 
+        // filter
+        const expensive = drinks.filter(function(data){
+            return data.price > 30;
+        })
+
+        console.log(expensive);
+
+        const newDrinks = drinks.filter(function(data){
+            return data.name != '奶茶';
+        })
+        console.log(newDrinks);
+
     </script>
 </body>
 </html>
