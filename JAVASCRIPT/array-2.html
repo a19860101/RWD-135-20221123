@@ -58,6 +58,17 @@
         })
         console.log(newDrinks);
 
+        // some 判斷陣列內是否有符合規則的資料，有就回傳true
+        const drink_some = drinks.some(function(data){
+            return data.price === '35';
+        })
+        console.log(drink_some);
+
+        // every 判斷陣列內是否每個都符合規則，有就回傳true
+        const drink_every = drinks.every(function(data){
+            return data.price >= 20;
+        })
+        console.log(drink_every);
     </script>
 </body>
 </html>
