@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            width: 900px;
+            height: 100vh;
+            margin-inline: auto;
+            background-color: #222;
+            display: grid;
+            grid-template-columns: repeat(3, 250px);
+            gap:5px;
+
+            justify-content: center;
+            /* 
+                start, end, center,
+                space-around, space-between, space-evenly
+            */
+            align-content: center;
+            /* 
+                start, end, center,
+                space-around, space-between, space-evenly
+                stretch
+            */
+            /* place-content: center; */
+
+            /* justify-items: center; */
+            /* align-items: center; */
+            /* place-items: center; */
+
+            
+
+        }
+        .item {
+            background-color: #fa0;
+            /* justify-self: ; */
+            /* align-self:; */
+        }
+        .item-content {
+            width: 180px;
+        }
+        .item:nth-of-type(2){
+            background-color: crimson;
+            /* justify-self: center; */
+            /* align-self: center; */
+            place-self: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item">
+            <div class="item-content">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus, ducimus?
+            </div>
+        </div>
+        <div class="item">
+            <div class="item-content">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus, ducimus?
+            </div>
+        </div>
+        <div class="item">
+            <div class="item-content">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus, ducimus?
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus, ducimus?
+            </div>
+        </div>
+        <div class="item">
+            <div class="item-content">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus, ducimus?
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus, ducimus?
+            </div>
+        </div>
+        <div class="item">
+            <div class="item-content">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus, ducimus?
+            </div>
+        </div>
+        <div class="item">
+            <div class="item-content">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus, ducimus?
+            </div>
+        </div>
+        <div class="item">
+            <div class="item-content">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus, ducimus?
+            </div>
+        </div>
+        <div class="item">
+            <div class="item-content">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus, ducimus?
+            </div>
+        </div>
+        <div class="item">
+            <div class="item-content">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus, ducimus?
+            </div>
+        </div>
+    </div>
+</body>
+</html>
