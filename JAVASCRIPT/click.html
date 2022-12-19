@@ -16,6 +16,7 @@
 <body>
     <button class="add">add</button>
     <button class="remove">remove</button>
+    <button class="toggle">toggle</button>
     <div class="content">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt reiciendis ex modi quaerat? Nesciunt saepe dolor laudantium perferendis voluptas rerum nihil, repellendus exercitationem voluptatum, libero tempora quos totam eius quaerat.
     </div>
@@ -23,6 +24,7 @@
     <script>
         let add = document.querySelector('.add');
         let remove = document.querySelector('.remove');
+        let toggle = document.querySelector('.toggle');
         let content = document.querySelector('.content');
         // btn.onclick = function(){
         //     let content = document.querySelector('.content');
@@ -36,6 +38,9 @@
         }
         remove.onclick = () =>{
             content.classList.remove('active');
+        }
+        toggle.onclick = () =>{
+            content.classList.toggle('active');
         }
     </script>
 
