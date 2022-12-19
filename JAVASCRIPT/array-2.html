@@ -81,6 +81,26 @@
             return data.price === '30';
         })
         console.log(drink_findIndex);
+
+        // reduce
+        // const p = [100,50,20];
+        // const total = p.reduce(function(a,b){
+        //     return a + b;
+        // })
+
+        // const price = drinks.map(function(data){
+        //     return data.price;
+        // })
+        // const total = price.reduce(function(a,b){
+        //     return Number(a) + Number(b);
+        // })
+
+        const total = drinks.map(function(data){
+            return data.price
+        }).reduce(function(a,b){
+            return Number(a) + Number(b);
+        })
+        console.log(total);
     </script>
 </body>
 </html>
