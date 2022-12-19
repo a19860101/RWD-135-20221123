@@ -5,15 +5,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .active {
+            color: red;
+            background-color: yellow;
+            padding: 30px;
+        }
+    </style>
 </head>
 <body>
-    <button class="btn">click</button>
+    <button class="add">add</button>
+    <button class="remove">remove</button>
     <div class="content">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt reiciendis ex modi quaerat? Nesciunt saepe dolor laudantium perferendis voluptas rerum nihil, repellendus exercitationem voluptatum, libero tempora quos totam eius quaerat.
     </div>
 
     <script>
-        let btn = document.querySelector('.btn');
+        let add = document.querySelector('.add');
+        let remove = document.querySelector('.remove');
+        let content = document.querySelector('.content');
         // btn.onclick = function(){
         //     let content = document.querySelector('.content');
         //     console.log(content);
@@ -21,12 +31,11 @@
         //     content.style.backgroundColor = 'yellow';
         //     content.style.padding = '15px';
         // }
-        btn.onclick = ()=>{
-            let content = document.querySelector('.content');
-            console.log(content);
-            content.style.color = 'red';
-            content.style.backgroundColor = 'yellow';
-            content.style.padding = '15px';
+        add.onclick = ()=>{
+            content.classList.add('active');
+        }
+        remove.onclick = () =>{
+            content.classList.remove('active');
         }
     </script>
 
