@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="title">hello javascript</h1>
+    <p class="content">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, impedit.
+    </p>
+    <ul>
+        <li class="list">list 1</li>
+        <li class="list">list 2</li>
+        <li class="list">list 3</li>
+        <li class="list">list 4</li>
+        <li class="list">list 5</li>
+    </ul>
+    <script>
+        // get element
+        // let title = document.getElementById('title');
+        // console.log(title);
+        // let content = document.getElementsByClassName('content');
+        // console.log(content);
+        // console.log(content[0]);
+        // let list = document.getElementsByClassName('list');
+        // console.log(list);
+        // let li = document.getElementsByTagName('li');
+        // console.log(li);
+
+        // query selector
+        let title = document.querySelector('#title');
+        console.log(title);
+        let content = document.querySelector('.content');
+        console.log(content);
+        let list = document.querySelectorAll('.list');
+        console.log(list);
+        let li = document.querySelectorAll('li');
+        console.log(li)
+    </script>
+</body>
+</html>
