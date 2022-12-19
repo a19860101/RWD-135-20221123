@@ -8,16 +8,35 @@
 </head>
 <body>
     <script>
-        console.log(test2());
-        // function declaration 函式宣告式
-        function test(){
-            return 'test';
+        // function declaration 函式宣告式 (提升性)
+        function test(a,b){
+            return a+b;
         }
+        console.log(test(123,100));
 
         // function expression 函式表達式
-        const test2 = function(){
-            return 'test2';
+        const test2 = function(a,b){
+            return a+b;
         }
+        console.log(test2(23,16));
+
+        // arrow function 箭頭函式
+        // const test3 = (a,b)=>{
+        //     return a+b;
+        // }
+
+        // const test3 = ()=>{
+        //     return 'test3'
+        // }
+        // const test3 = a =>{
+        //     return a;
+        // }
+        // const test3 = (a,b) =>{
+        //     return a;
+        // }
+        const test3 = a => a;
+        
+        console.log(test3('hello'));
 
     </script>
 </body>
