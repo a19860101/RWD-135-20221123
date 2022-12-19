@@ -34,10 +34,22 @@
         // const test3 = (a,b) =>{
         //     return a;
         // }
-        const test3 = a => a;
+        // const test3 = a => a;
         
-        console.log(test3('hello'));
+        // console.log(test3('hello'));
 
+
+        const obj = {
+            data: function(){
+                return this;
+            },
+            data2: ()=>{
+                return this;
+            }
+        }
+
+        console.log(obj.data())
+        console.log(obj.data2())
     </script>
 </body>
 </html>
