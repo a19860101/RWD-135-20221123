@@ -121,9 +121,13 @@
 
         next.onclick = e => {
             slider();
+            clearInterval(timer);
+            timer = setInterval(slider,timeout);
         }
         prev.onclick = e => {
             slider('prev');
+            clearInterval(timer);
+            timer = timer = setInterval(slider,timeout);
         }
 
         const slider = (direction) => {
@@ -142,7 +146,7 @@
             document.querySelector('.slider-item.active').classList.remove('active');
             imgs[currentIndex].classList.add('active');
         }
-        setInterval(slider,timeout);
+        let timer = setInterval(slider,timeout);
     </script>
 </body>
 </html>
