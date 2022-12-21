@@ -26,9 +26,11 @@
         .slider-item {
             position: absolute;
             opacity: 0;
+            transition: 1000ms;
         }
         .slider-item.active {
             opacity: 1;
+            z-index: 10;
         }
         .slider-caption {
             position: absolute;
@@ -109,7 +111,8 @@
             // }
 
             currentIndex = (currentIndex + 1) % total;
-
+            document.querySelector('.slider-item.active').classList.remove('active');
+            imgs[currentIndex].classList.add('active');
             console.log(currentIndex);
         }
         setInterval(slider,timeout);
