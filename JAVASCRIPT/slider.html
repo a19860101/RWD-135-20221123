@@ -20,6 +20,7 @@
         }
         .slider {
             width: 1200px;
+            aspect-ratio: 16 / 9;
             margin-inline: auto;
             position: relative;
         }
@@ -46,6 +47,14 @@
         }
         .slider-caption h4 {
             font-size: 2.5rem;
+        }
+        .slider-nav {
+            position: absolute;
+            width: 100%;
+            z-index: 20;
+            bottom: 0;
+            transform: translateY(100%);
+            text-align: center;
         }
     </style>
 </head>
@@ -96,12 +105,26 @@
                 </p>
             </div>
         </div>
+        <div class="slider-nav">
+            <a href="#" class="slider-prev">PREV</a>
+            <a href="#" class="slider-next">NEXT</a>
+        </div>
     </div>
     <script>
         let imgs = document.querySelectorAll('.slider-item');
         let total = imgs.length;
         let currentIndex = 0;
         let timeout = 6000;
+        
+        let next = document.querySelector('.slider-next');
+        let prev = document.querySelector('.slider-prev');
+
+        next.onclick = e => {
+            console.log(e.target);
+        }
+        prev.onclick = e => {
+            console.log(e.target);
+        }
 
         const slider = () => {
             // if(currentIndex === total - 1){
