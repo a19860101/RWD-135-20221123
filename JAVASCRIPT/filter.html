@@ -5,6 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .find {
+            background-color: #fa0;
+            color: purple;
+        }
+    </style>
 </head>
 <body>
     <input type="text" id="input">
@@ -20,17 +26,30 @@
         <li>春芽冷露</li>
         <li>冷露歐蕾</li>
         <li>熟成歐蕾</li>
+        <li>Latte</li>
     </ul>
     <script>
         let input = document.querySelector('#input');
         let li = document.querySelectorAll('li');
         input.onkeyup = e => {
             for(let item of li){
-                if(item.textContent.indexOf(input.value) > -1){
+                // 區分大小寫
+                // if(item.textContent.indexOf(input.value) > -1){
+                //     item.style.display = '';
+                // }else{
+                //     item.style.display = 'none';
+                // }
+
+                // 不區分大小寫
+                if(item.textContent.toUpperCase().indexOf(input.value.toUpperCase()) > -1){
                     item.style.display = '';
+                    // item.style.color = 'red';
                 }else{
                     item.style.display = 'none';
+                    // item.style.color = 'black';
                 }
+
+
             }
         }
     </script>
