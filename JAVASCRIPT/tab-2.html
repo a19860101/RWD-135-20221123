@@ -109,6 +109,8 @@
                 document.querySelector('.tab-link.active').classList.remove('active');
                 e.target.classList.add('active');
                 let panel = e.target.dataset.panel;
+                // let panel = e.target.getAttribute('href');
+                console.log(panel);
                 document.querySelector('.tab-panel.active').classList.remove('active');
                 document.querySelector(panel).classList.add('active');
             }
