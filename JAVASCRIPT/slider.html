@@ -120,23 +120,27 @@
         let prev = document.querySelector('.slider-prev');
 
         next.onclick = e => {
-            console.log(e.target);
+            slider();
         }
         prev.onclick = e => {
-            console.log(e.target);
+            slider('prev');
         }
 
-        const slider = () => {
+        const slider = (direction) => {
             // if(currentIndex === total - 1){
             //     currentIndex = 0;
             // }else{
             //     currentIndex++;
             // }
-
-            currentIndex = (currentIndex + 1) % total;
+            if(direction === 'prev'){
+                currentIndex = currentIndex === 0 ? total : currentIndex;
+                currentIndex = (currentIndex - 1) % total;
+            }else{
+                currentIndex = (currentIndex + 1) % total;
+            }
+           
             document.querySelector('.slider-item.active').classList.remove('active');
             imgs[currentIndex].classList.add('active');
-            console.log(currentIndex);
         }
         setInterval(slider,timeout);
     </script>
