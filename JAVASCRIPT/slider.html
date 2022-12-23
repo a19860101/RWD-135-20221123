@@ -68,10 +68,13 @@
         .dot {
             width: 12px;
             height: 12px;
-            background-color: red;
+            background-color: #222;
             margin: 10px;
             border-radius: 50%;
             cursor: pointer;
+        }
+        .dot.active {
+            background-color: #f00;
         }
     </style>
 </head>
@@ -174,9 +177,13 @@
         }
 
         let dots = document.querySelectorAll('.dot');
+        dots[0].classList.add('active');
         for(let d of dots){
             d.onclick = e => {
-                currentIndex = e.target.dataset.idx;
+                document.querySelector('.dot.active').classList.remove('active');
+                e.target.classList.add('active');
+
+                currentIndex = Number(e.target.dataset.idx);
                 console.log(currentIndex);
                 document.querySelector('.slider-item.active').classList.remove('active');
                 imgs[currentIndex].classList.add('active');
