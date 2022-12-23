@@ -98,7 +98,31 @@
                     </p>
                 </div>
             </div>
+            <div class="slider-item">
+                <img src="https://picsum.photos/id/19/1600/900" alt="">
+                <div class="slider-caption">
+                    <h4>IMG 6</h4>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex repudiandae cupiditate distinctio.
+                    </p>
+                </div>
+            </div>
         </div>
     </div>
+    <script>
+        let imgs = document.querySelectorAll('.slider-item');
+        let total = imgs.length;
+        let currentIndex = 0;
+        let timeout = 6000;
+        let sliderItem = document.querySelector('.slider-item');
+        let sliderWidth = sliderItem.clientWidth;
+        let wrapperWidth = sliderWidth * total;
+
+        let wrapper = document.querySelector('.slider-wrapper');
+        wrapper.style.width = wrapperWidth + 'px';        
+
+        // let next = document.querySelector('.slider-next');
+        // let prev = document.querySelector('.slider-prev');
+    </script>
 </body>
 </html>
