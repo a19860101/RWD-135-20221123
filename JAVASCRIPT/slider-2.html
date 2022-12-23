@@ -24,10 +24,12 @@
             position: relative;
             background-color: #ccc;
             margin-inline: auto;
+            overflow-x: hidden;
         }
         .slider-wrapper {
             display: flex;
             flex-wrap: wrap ;
+            transition:800ms;
         }
         .slider-item {
             width:1200px;
@@ -123,6 +125,20 @@
 
         // let next = document.querySelector('.slider-next');
         // let prev = document.querySelector('.slider-prev');
+
+        const slider = (direction) => {
+            if(direction === 'prev'){
+                currentIndex = currentIndex === 0 ? total : currentIndex;
+                currentIndex = (currentIndex - 1) % total;
+            }else{
+                currentIndex = (currentIndex + 1) % total;
+            }
+
+            wrapper.style.marginLeft = -(sliderWidth * currentIndex) + 'px';
+
+        }
+
+        let timer = setInterval(slider,timeout);
     </script>
 </body>
 </html>
