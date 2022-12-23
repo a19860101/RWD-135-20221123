@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'georgia';
+        }
+        img {
+            display: block;
+            width: 100%;
+        }
+        .slider {
+            width: 1200px;
+            aspect-ratio: 16 / 9;
+            position: relative;
+            background-color: #ccc;
+            margin-inline: auto;
+        }
+        .slider-wrapper {
+            display: flex;
+            flex-wrap: wrap ;
+        }
+        .slider-item {
+            width:1200px;
+            position: relative;
+        }
+        .slider-caption {
+            position: absolute;
+            background-color: #fa0;
+            width: 40%;
+            height: min-content;
+            padding: 30px;
+            inset:0;
+            margin: auto;
+            text-align: center;
+            font-size: 1.3rem;
+            border-radius: 6px;
+        }
+        .slider-caption h4 {
+            font-size: 2.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="slider">
+        <div class="slider-wrapper">
+            <div class="slider-item active">
+                <img src="https://picsum.photos/id/23/1600/900" alt="">
+                <div class="slider-caption">
+                    <h4>IMG 1</h4>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex repudiandae cupiditate distinctio.
+                    </p>
+                </div>
+            </div>
+            <div class="slider-item">
+                <img src="https://picsum.photos/id/45/1600/900" alt="">
+                <div class="slider-caption">
+                    <h4>IMG 2</h4>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex repudiandae cupiditate distinctio.
+                    </p>
+                </div>
+            </div>
+            <div class="slider-item">
+                <img src="https://picsum.photos/id/26/1600/900" alt="">
+                <div class="slider-caption">
+                    <h4>IMG 3</h4>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex repudiandae cupiditate distinctio.
+                    </p>
+                </div>
+            </div>
+            <div class="slider-item">
+                <img src="https://picsum.photos/id/91/1600/900" alt="">
+                <div class="slider-caption">
+                    <h4>IMG 4</h4>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex repudiandae cupiditate distinctio.
+                    </p>
+                </div>
+            </div>
+            <div class="slider-item">
+                <img src="https://picsum.photos/id/49/1600/900" alt="">
+                <div class="slider-caption">
+                    <h4>IMG 5</h4>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex repudiandae cupiditate distinctio.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
