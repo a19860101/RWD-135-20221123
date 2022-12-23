@@ -168,8 +168,16 @@
 
         for(let i=0;i<total;i++){
             let dot = document.createElement('span');
+            dot.dataset.idx = i;
             dot.classList.add('dot');
             document.querySelector('.slider-dots').append(dot);
+        }
+
+        let dots = document.querySelectorAll('.dot');
+        for(let d of dots){
+            d.onclick = e => {
+                console.log(e.target.dataset.idx);
+            }
         }
     </script>
 </body>
