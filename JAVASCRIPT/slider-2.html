@@ -24,7 +24,6 @@
             position: relative;
             background-color: #ccc;
             margin-inline: auto;
-            overflow-x: hidden;
         }
         .slider-wrapper {
             display: flex;
@@ -49,6 +48,34 @@
         }
         .slider-caption h4 {
             font-size: 2.5rem;
+        }
+        .slider-nav {
+            position: absolute;
+            width: 100%;
+            z-index: 20;
+            bottom: -30px;
+            text-align: center;
+        }
+
+        .slider-dots {
+            position: absolute;
+            width: 100%;
+            background-color: #098;
+            bottom: 0;
+            z-index: 20;
+            display: flex;
+            justify-content: center;
+        }
+        .dot {
+            width: 12px;
+            height: 12px;
+            background-color: #222;
+            margin: 10px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        .dot.active {
+            background-color: #f00;
         }
     </style>
 </head>
@@ -110,6 +137,11 @@
                 </div>
             </div>
         </div>
+        <div class="slider-nav">
+            <a href="#" class="slider-prev">PREV</a>
+            <a href="#" class="slider-next">NEXT</a>
+        </div>
+        <div class="slider-dots"></div>
     </div>
     <script>
         let imgs = document.querySelectorAll('.slider-item');
@@ -123,8 +155,28 @@
         let wrapper = document.querySelector('.slider-wrapper');
         wrapper.style.width = wrapperWidth + 'px';        
 
-        // let next = document.querySelector('.slider-next');
-        // let prev = document.querySelector('.slider-prev');
+        let next = document.querySelector('.slider-next');
+        let prev = document.querySelector('.slider-prev');
+
+        next.onclick = e => {
+            slider();
+            clearInterval(timer);
+            timer = setInterval(slider,timeout);
+        }
+        prev.onclick = e => {
+            slider('prev');
+            clearInterval(timer);
+            timer = timer = setInterval(slider,timeout);
+        }
+
+        for(let i=0;i<total;i++){
+            let dot = document.createElement('span');
+            dot.dataset.idx = i;
+            dot.classList.add('dot');
+            document.querySelector('.slider-dots').append(dot);
+        }
+
+        let dots = document.querySelectorAll('.dot');
 
         const slider = (direction) => {
             if(direction === 'prev'){
@@ -135,10 +187,25 @@
             }
 
             wrapper.style.marginLeft = -(sliderWidth * currentIndex) + 'px';
+            document.querySelector('.dot.active').classList.remove('active');
+            dots[currentIndex].classList.add('active')
+        }
+        let timer = setInterval(slider,timeout);
+
+        dots[0].classList.add('active');
+        for(let d of dots){
+            d.onclick = e => {
+                document.querySelector('.dot.active').classList.remove('active');
+                e.target.classList.add('active');
+                currentIndex = Number(e.target.dataset.idx);
+
+                wrapper.style.marginLeft = -(sliderWidth * currentIndex) + 'px';
+
+                clearInterval(timer);
+                timer = setInterval(slider,timeout);
+            }
 
         }
-
-        let timer = setInterval(slider,timeout);
     </script>
 </body>
 </html>
