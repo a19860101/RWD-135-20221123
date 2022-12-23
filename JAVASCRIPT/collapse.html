@@ -36,6 +36,13 @@
             background-color: #ccc;
             height: 0;
             overflow: hidden;
+            box-sizing: content-box;
+            opacity: 0;
+            transition: 600ms;
+        }
+        .collapse-panel.active {
+            padding-block: 30px;
+            opacity: 1;
         }
     </style>
 </head>
@@ -62,7 +69,14 @@
             btn.onclick = e => {
                 // let panel = e.target.dataset.panel;
                 // console.log(document.querySelector(panel));
-                console.log(e.target.nextElementSibling);
+                let panel = e.target.nextElementSibling;
+                panel.classList.toggle('active');
+                if(panel.style.height){
+                    panel.style.height = null;
+                }else{
+                    panel.style.height = panel.scrollHeight + 'px';
+                }
+
 
             }
         }
