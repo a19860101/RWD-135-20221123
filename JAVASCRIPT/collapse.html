@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+        body {
+            font-family: 'Gill Sans MT';
+        }
+        .collapse {
+            width: 600px;
+            margin-inline: auto;
+        }
+        .collapse-btn {
+            display: block;
+            text-decoration: none;
+            background-color: #222;
+            color: #fff;
+            padding: 15px;
+            border-bottom: 1px solid #ccc;
+        }
+        .collapse-btn:hover {
+            background-color: #fff397;
+            color: #222;
+        }
+        .collapse-panel {
+            padding-inline: 15px;
+            padding-block: 0;
+            background-color: #ccc;
+            height: 0;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <div class="collapse">
+        <a href="#" class="collapse-btn" data-panel="#panel-1">Panel 1</a>
+        <div class="collapse-panel" id="panel-1">
+            <h2>Panel 1</h2>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem facere ex sint modi velit ratione eveniet? Eos quo temporibus laudantium eius doloremque, ipsam iure sequi officiis repudiandae, id rem ab!
+            </p>
+        </div>
+        <a href="#" class="collapse-btn" data-panel="#panel-2">Panel 2</a>
+        <div class="collapse-panel" id="panel-2">
+            <h2>Panel 2</h2>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus praesentium quis incidunt, in ex eius distinctio, autem numquam dignissimos laboriosam veritatis voluptates minima ratione nisi ea? Omnis exercitationem dolorum optio necessitatibus possimus incidunt, eos molestiae aspernatur quibusdam? Quasi veritatis dolore distinctio, dolorem magni ipsam, esse ipsum voluptates molestiae fugit soluta!
+            </p>
+        </div>
+    </div>
+    <script>
+        let btns = document.querySelectorAll('.collapse-btn');
+        for(let btn of btns){
+            btn.onclick = e => {
+                // let panel = e.target.dataset.panel;
+                // console.log(document.querySelector(panel));
+                console.log(e.target.nextElementSibling);
+
+            }
+        }
+    </script>
+</body>
+</html>
