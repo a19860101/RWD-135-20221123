@@ -140,6 +140,15 @@
         let next = document.querySelector('.slider-next');
         let prev = document.querySelector('.slider-prev');
 
+        for(let i=0;i<total;i++){
+            let dot = document.createElement('span');
+            dot.dataset.idx = i;
+            dot.classList.add('dot');
+            document.querySelector('.slider-dots').append(dot);
+        }
+
+        let dots = document.querySelectorAll('.dot');
+
         next.onclick = e => {
             slider();
             clearInterval(timer);
@@ -163,34 +172,46 @@
             }else{
                 currentIndex = (currentIndex + 1) % total;
             }
-           
-            document.querySelector('.slider-item.active').classList.remove('active');
-            imgs[currentIndex].classList.add('active');
+            // document.querySelector('.dot.active').classList.remove('active');
+            // dots[currentIndex].classList.add('active');
+
+            // document.querySelector('.slider-item.active').classList.remove('active');
+            // imgs[currentIndex].classList.add('active');
+
+            switchDot(currentIndex)
+            switchImg(currentIndex)
         }
         let timer = setInterval(slider,timeout);
 
-        for(let i=0;i<total;i++){
-            let dot = document.createElement('span');
-            dot.dataset.idx = i;
-            dot.classList.add('dot');
-            document.querySelector('.slider-dots').append(dot);
-        }
-
-        let dots = document.querySelectorAll('.dot');
+      
         dots[0].classList.add('active');
         for(let d of dots){
             d.onclick = e => {
-                document.querySelector('.dot.active').classList.remove('active');
-                e.target.classList.add('active');
-
+                // document.querySelector('.dot.active').classList.remove('active');
+                // e.target.classList.add('active');
                 currentIndex = Number(e.target.dataset.idx);
-                console.log(currentIndex);
-                document.querySelector('.slider-item.active').classList.remove('active');
-                imgs[currentIndex].classList.add('active');
+
+                switchDot(currentIndex)
+
+                // console.log(currentIndex);
+                // document.querySelector('.slider-item.active').classList.remove('active');
+                // imgs[currentIndex].classList.add('active');
+                switchImg(currentIndex);
 
                 clearInterval(timer);
                 timer = setInterval(slider,timeout);
             }
+
+        }
+
+        const switchImg = idx => {
+            document.querySelector('.slider-item.active').classList.remove('active');
+            imgs[idx].classList.add('active');
+        }
+        const switchDot = idx => {
+            document.querySelector('.dot.active').classList.remove('active');
+            // e.target.classList.add('active');
+            dots[idx].classList.add('active');
 
         }
     </script>
