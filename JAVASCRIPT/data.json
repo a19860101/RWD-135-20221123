@@ -1,0 +1,19 @@
+{
+    "data":[
+        {
+            "id":1,
+            "name":"John",
+            "email":"john@gmail.com"
+        },
+        {
+            "id":2,
+            "name":"Max",
+            "email":"max@gmail.com"
+        },
+        {
+            "id":3,
+            "name":"Mary",
+            "email":"mary@gmail.com"
+        }
+    ]
+}
