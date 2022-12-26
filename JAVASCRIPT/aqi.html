@@ -23,6 +23,15 @@
             padding: 15px;
             border-radius: 10px;
         }
+        .box.blue {
+            background-color: #63c8ff;
+        }
+        .box.red {
+            background-color: #ff6b81;
+        }
+        .box.orange{
+            background-color: #ffe74e;
+        }
     </style>
 </head>
 <body>
@@ -66,6 +75,10 @@
                     let aqi = document.createElement('div');
                     aqi.classList.add('aqi');
                     aqi.append('空氣品質指標:'+item.aqi);
+                    
+                    let co = document.createElement('div');
+                    co.classList.add('co');
+                    co.append('一氧化碳:'+item.co);
 
                     let county = document.createElement('div');
                     county.classList.add('county');
@@ -74,9 +87,15 @@
                     let box = document.createElement('div');
                     box.classList.add('box');
 
+                    if(item.aqi >= 100){
+                       box.classList.add('red');
+                    }else if(item.aqi >= 50){
+                       box.classList.add('orange');
+                    }else{
+                       box.classList.add('blue');
+                    }
 
-
-                    box.append(county,status,aqi);
+                    box.append(county,status,aqi,co);
                     el.append(box);
                 }
             }
