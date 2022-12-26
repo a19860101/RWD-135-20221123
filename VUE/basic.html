@@ -18,19 +18,28 @@
         <ul>
             <li v-for="user in users">{{user.name}} {{user.id}}</li>
         </ul>
+        <input type="text" v-model="title">
+        <input type="checkbox" v-model="onsale">
+        <div v-if="onsale">特價</div>
+        <img v-bind:src="cover" alt="">
+        <img :src="cover" alt="">
         <div v-if="qty > 10">庫存充足</div>
         <div v-else-if="qty > 0">低庫存</div>
         <div v-else>補貨中</div>
 
         <div v-show="qty > 10">顯示</div>
+
+        
     </div>
     <script>
         Vue.createApp({
             data(){
                 return {
                     title: 'Hello VUe',
+                    onsale:false,
                     number: 123,
                     visible: false,
+                    cover:'https://picsum.photos/id/23/800/400',
                     qty: 0,
                     datas:['apple','banana','cat'],
                     users:[
