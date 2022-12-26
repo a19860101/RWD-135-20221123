@@ -26,6 +26,11 @@
     </style>
 </head>
 <body>
+    <div>
+        <select name="" id="county">
+            <option>--請選擇--</option>
+        </select>
+    </div>
     <div class="container">
 
     </div>
@@ -35,7 +40,21 @@
         .then(res => res.json())
         .then(data=>{
             console.log(data.records);
+            let county = data.records.map(e => e.county);
+            county = Array.from(new Set(county));
+            console.log(county)
+            for(let c of county){
+                let opt = document.createElement('option');
+                opt.value = c;
+                opt.textContent = c;
+                document.querySelector('#county').append(opt);
+            }
+
+            document.querySelector('#county').onchange = e => {
+                console.log(e.target.value);
+            }
             for(let item of data.records){
+
                 let status = document.createElement('div');
                 status.classList.add('status');
                 status.append('空氣品質:'+item.status);
