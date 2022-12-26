@@ -12,13 +12,30 @@
     <div id="app">
         <h1>{{title}}</h1>
         <div>{{number}}</div>
+        <ul>
+            <li v-for="(data,idx) of datas">{{idx}}--{{data}}</li>
+        </ul>
+        <ul>
+            <li v-for="user in users">{{user.name}} {{user.id}}</li>
+        </ul>
     </div>
     <script>
         Vue.createApp({
             data(){
                 return {
                     title: 'Hello VUe',
-                    number: 123
+                    number: 123,
+                    datas:['apple','banana','cat'],
+                    users:[
+                        {
+                            id:1,
+                            name:'john'
+                        },
+                        {
+                            id:2,
+                            name:'mary'
+                        }
+                    ]
                 }
             }
         }).mount('#app');
