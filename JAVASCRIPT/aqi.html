@@ -36,13 +36,14 @@
     </div>
     <script>
         let url = 'https://data.epa.gov.tw/api/v2/aqx_p_432?api_key=e8dd42e6-9b8b-43f8-991e-b3dee723a52d&limit=1000&sort=ImportDate%20desc&format=JSON';
+        let el = document.querySelector('.container');
         fetch(url)
         .then(res => res.json())
         .then(data=>{
-            console.log(data.records);
+            // console.log(data.records);
             let county = data.records.map(e => e.county);
             county = Array.from(new Set(county));
-            console.log(county)
+            // console.log(county)
             for(let c of county){
                 let opt = document.createElement('option');
                 opt.value = c;
@@ -51,30 +52,35 @@
             }
 
             document.querySelector('#county').onchange = e => {
-                console.log(e.target.value);
+                el.textContent = '';
+                // console.log(e.target.value);
+                let filterData = data.records.filter(data=>data.county === e.target.value);
+                console.log(filterData);
+
+                for(let item of  filterData){
+
+                    let status = document.createElement('div');
+                    status.classList.add('status');
+                    status.append('空氣品質:'+item.status);
+
+                    let aqi = document.createElement('div');
+                    aqi.classList.add('aqi');
+                    aqi.append('空氣品質指標:'+item.aqi);
+
+                    let county = document.createElement('div');
+                    county.classList.add('county');
+                    county.append('地區:'+item.county);
+
+                    let box = document.createElement('div');
+                    box.classList.add('box');
+
+
+
+                    box.append(county,status,aqi);
+                    el.append(box);
+                }
             }
-            for(let item of data.records){
-
-                let status = document.createElement('div');
-                status.classList.add('status');
-                status.append('空氣品質:'+item.status);
-                
-                let aqi = document.createElement('div');
-                aqi.classList.add('aqi');
-                aqi.append('空氣品質指標:'+item.aqi);
-
-                let county = document.createElement('div');
-                county.classList.add('county');
-                county.append('地區:'+item.county);
-
-                let box = document.createElement('div');
-                box.classList.add('box');
-                
-                
-
-                box.append(county,status,aqi);
-                document.querySelector('.container').append(box);
-            }
+            
         })
     </script>
 </body>
