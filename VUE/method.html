@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <style>
+        .active {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <button v-on:click="test()">click</button>
+        <button @click="change()">change</button>
+        <button @click="textColor = !textColor">change</button>
+        <div :class="{active:textColor}">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem iste magni, nostrum dolorum adipisci aliquid molestias ut quaerat et aliquam, libero quae vitae, non porro aut dolore cum tempore animi.
+        </div>
+    </div>
+    <script>
+        Vue.createApp({
+            data(){
+                return {
+                    textColor: false
+                }
+            },
+            methods:{
+                test(){
+                    alert('hello vue');
+                },
+                change(){
+                    console.log(this.textColor);
+                    // this.textColor = true;
+                    this.textColor = !this.textColor
+                }
+            }
+        }).mount('#app');
+    </script>
+</body>
+</html>
