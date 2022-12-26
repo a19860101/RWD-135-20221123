@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
     <style>
         * {
             box-sizing: border-box;
@@ -19,13 +20,17 @@
             margin-inline: auto;
         }
         .collapse-btn {
-            display: block;
+            display: flex;
+            align-items: center;
             text-decoration: none;
             background-color: #222;
             color: #fff;
             padding: 15px;
             border-bottom: 1px solid #ccc;
+            transition: 600ms;
+
         }
+      
         .collapse-btn:hover {
             background-color: #fff397;
             color: #222;
@@ -44,18 +49,40 @@
             padding-block: 30px;
             opacity: 1;
         }
+        .collapse-btn i {
+            color: #fff;
+            margin-left: auto;
+            transition: 600ms;
+        }
+        .collapse-btn.active {
+            background-color: #fff397;
+            color: #222;
+        }
+        .collapse-btn.active i {
+            transform: rotate(-90deg);
+            color: #222;
+        }
+        .collapse-btn:hover i {
+            color: #000;
+        }
     </style>
 </head>
 <body>
     <div class="collapse">
-        <a href="#" class="collapse-btn" data-panel="#panel-1">Panel 1</a>
+        <a href="#" class="collapse-btn" data-panel="#panel-1">
+            Panel 1
+            <i class="fa-solid fa-chevron-down"></i>
+        </a>
         <div class="collapse-panel" id="panel-1">
             <h2>Panel 1</h2>
             <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem facere ex sint modi velit ratione eveniet? Eos quo temporibus laudantium eius doloremque, ipsam iure sequi officiis repudiandae, id rem ab!
             </p>
         </div>
-        <a href="#" class="collapse-btn" data-panel="#panel-2">Panel 2</a>
+        <a href="#" class="collapse-btn" data-panel="#panel-2">
+            Panel 2
+            <i class="fa-solid fa-chevron-down"></i>
+        </a>
         <div class="collapse-panel" id="panel-2">
             <h2>Panel 2</h2>
             <p>
@@ -67,6 +94,8 @@
         let btns = document.querySelectorAll('.collapse-btn');
         for(let btn of btns){
             btn.onclick = e => {
+                e.target.classList.toggle('active');
+
                 // let panel = e.target.dataset.panel;
                 // console.log(document.querySelector(panel));
                 let panel = e.target.nextElementSibling;
