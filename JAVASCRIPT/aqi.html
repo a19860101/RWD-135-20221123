@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container {
+            max-width: 1200px;
+            margin-inline: auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fill,minmax(200px,1fr));
+            gap:10px;
+        }
+        .box {
+            background-color: #ccc;
+            padding: 15px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+    </div>
+    <script>
+        let url = 'https://data.epa.gov.tw/api/v2/aqx_p_432?api_key=e8dd42e6-9b8b-43f8-991e-b3dee723a52d&limit=1000&sort=ImportDate%20desc&format=JSON';
+        fetch(url)
+        .then(res => res.json())
+        .then(data=>{
+            console.log(data.records);
+            for(let item of data.records){
+                let status = document.createElement('div');
+                status.classList.add('status');
+                status.append('空氣品質:'+item.status);
+                
+                let aqi = document.createElement('div');
+                aqi.classList.add('aqi');
+                aqi.append('空氣品質指標:'+item.aqi);
+
+                let county = document.createElement('div');
+                county.classList.add('county');
+                county.append('地區:'+item.county);
+
+                let box = document.createElement('div');
+                box.classList.add('box');
+                
+                
+
+                box.append(county,status,aqi);
+                document.querySelector('.container').append(box);
+            }
+        })
+    </script>
+</body>
+</html>
