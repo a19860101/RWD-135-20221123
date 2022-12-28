@@ -19,15 +19,15 @@
             max-width: 1200px;
             display: grid;
             margin-inline: auto;
-            grid-template-columns: repeat(2,1fr);
-            gap:50px;
+            grid-template-columns: repeat(auto-fill,minmax(250px,1fr));
+            gap: 30px;
         }
         img {
             display: block;
             width: 100%;
         }
         .item {
-            padding: 50px;
+            padding: 15px;
         }
         .search {
             padding: 15px;
@@ -39,21 +39,39 @@
         .search button {
             padding: 15px;
         }
+        .poster {
+            aspect-ratio: 5 / 7;
+        }
+        .poster img {
+            height: 100%;
+            object-fit: cover;
+        }
+        .page {
+            text-align: center;
+            
+        }
     </style>
 
 </head>
 <body>
     <div id="app">
         <div class="search">
-            <input type="text" v-model="title">
+            <input type="text" v-model="title"@keyup.enter="getMovies()">
             <button @click="getMovies()">搜尋</button>
         </div>
         <div class="container">
             <div v-for="movie in movies" class="item">
-                <img :src="movie.Poster" alt="">
+                <div class="poster">
+                    <img :src="movie.Poster" alt="">
+                </div>
                 <h2>{{movie.Title}}</h2>
                 <div>{{movie.Year}}</div>
             </div>
+        </div>
+        <div class="page" v-if="movies != ''">
+            <a href="#" @click="" v-if="currentPage != 1">上一頁</a>
+            <a href="#" @click="" v-if="currentPage != totalPages">下一頁</a>
+            {{currentPage}} / {{totalPages}}
         </div>
     </div>    
     <script>
@@ -61,8 +79,10 @@
         Vue.createApp({
             data(){
                 return{
-                    title:'',
+                    title:'spider',
                     movies:'',
+                    currentPage: 1,
+                    totalPages:''
                 }
             },
             methods:{
