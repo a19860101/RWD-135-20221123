@@ -12,13 +12,20 @@
     <div id="app">
         <input type="text" v-model="input">
         <button @click="add()">新增事項</button>
+        <h3>已完成</h3>
         <ul>
-            <li v-for="todo in todos">
+            <li v-for="todo in todoCompleted">
                 <input type="checkbox" v-model="todo.isCompleted">
                 {{todo.name}}
             </li>
         </ul>
-    </div>    
+        <h3>未完成</h3>
+        <ul>
+            <li v-for="todo in todoUnCompleted">
+                <input type="checkbox" v-model="todo.isCompleted">
+                {{todo.name}}
+            </li>
+        </ul>
     <script>
         Vue.createApp({
             data(){
@@ -45,6 +52,14 @@
                         isCompleted: false
                     });
                     this.input = '';
+                }
+            },
+            computed:{
+                todoCompleted(){
+                    return this.todos.filter(data => data.isCompleted === true);
+                },
+                todoUnCompleted(){
+                    return this.todos.filter(data => data.isCompleted === false);
                 }
             }
         }).mount('#app');
