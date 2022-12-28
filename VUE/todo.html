@@ -11,7 +11,7 @@
 <body>
     <div id="app">
         <input type="text" v-model="input">
-        <button>新增事項</button>
+        <button @click="add()">新增事項</button>
         <ul>
             <li v-for="todo in todos">
                 <input type="checkbox" v-model="todo.isCompleted">
@@ -35,6 +35,16 @@
                             isCompleted:true
                         }
                     ]
+                }
+            },
+            methods:{
+                add(){
+                    this.todos.push({
+                        id:Date.now(),
+                        name:this.input,
+                        isCompleted: false
+                    });
+                    this.input = '';
                 }
             }
         }).mount('#app');
