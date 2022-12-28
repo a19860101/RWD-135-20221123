@@ -59,18 +59,26 @@
             <input type="text" v-model="title"@keyup.enter="getMovies()">
             <button @click="getMovies()">搜尋</button>
         </div>
+        <div class="page" v-if="movies != ''">
+            <a href="#" @click="getPrev()" v-if="currentPage != 1">上一頁</a>
+            <a href="#" @click="getNext()" v-if="currentPage != totalPages">下一頁</a>
+            {{currentPage}} / {{totalPages}}
+        </div>
         <div class="container">
             <div v-for="movie in movies" class="item">
                 <div class="poster">
-                    <img :src="movie.Poster" alt="">
+                    <template v-if="movie.Poster === 'N/A'">
+                        <img src="https://picsum.photos/id/33/500/700" alt="">
+                    </template>
+                    <template v-else><img :src="movie.Poster" alt=""></template>
                 </div>
                 <h2>{{movie.Title}}</h2>
                 <div>{{movie.Year}}</div>
             </div>
         </div>
         <div class="page" v-if="movies != ''">
-            <a href="#" @click="" v-if="currentPage != 1">上一頁</a>
-            <a href="#" @click="" v-if="currentPage != totalPages">下一頁</a>
+            <a href="#" @click="getPrev()" v-if="currentPage != 1">上一頁</a>
+            <a href="#" @click="getNext()" v-if="currentPage != totalPages">下一頁</a>
             {{currentPage}} / {{totalPages}}
         </div>
     </div>    
@@ -79,6 +87,7 @@
         Vue.createApp({
             data(){
                 return{
+                    apikey:'18456e59',
                     title:'spider',
                     movies:'',
                     currentPage: 1,
@@ -87,12 +96,32 @@
             },
             methods:{
                 getMovies(){
-                    let apikey = '18456e59';
-                    let url =  `http://www.omdbapi.com/?apikey=${apikey}&s=${this.title}`;
+                    let url =  `http://www.omdbapi.com/?apikey=${this.apikey}&s=${this.title}&page=${this.currentPage}`;
+                    // let url =  `http://www.omdbapi.com/?apikey=${this.apikey}&s=${this.title}`;
                     fetch(url)
                     .then(res=>res.json())
                     .then(data => {
-                        console.log(data.Search);
+                        console.log(data);
+                        this.movies = data.Search;
+                        this.totalPages = Math.ceil(data.totalResults / 10);
+
+                    })
+                },
+                getNext(){
+                    this.currentPage = this.currentPage + 1;
+                    let url =  `http://www.omdbapi.com/?apikey=${this.apikey}&s=${this.title}&page=${this.currentPage}`;
+                    fetch(url)
+                    .then(res=>res.json())
+                    .then(data => {
+                        this.movies = data.Search;
+                    })
+                },
+                getPrev(){
+                    this.currentPage = this.currentPage - 1;
+                    let url =  `http://www.omdbapi.com/?apikey=${this.apikey}&s=${this.title}&page=${this.currentPage}`;
+                    fetch(url)
+                    .then(res=>res.json())
+                    .then(data => {
                         this.movies = data.Search;
                     })
                 }
