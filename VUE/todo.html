@@ -14,14 +14,14 @@
         <button @click="add()">新增事項</button>
         <h3>已完成</h3>
         <ul>
-            <li v-for="todo in todoCompleted">
+            <li v-for="todo in todoCompleted" :key="todo.id">
                 <input type="checkbox" v-model="todo.isCompleted">
                 {{todo.name}}
             </li>
         </ul>
         <h3>未完成</h3>
         <ul>
-            <li v-for="todo in todoUnCompleted">
+            <li v-for="todo in todoUnCompleted" :key="todo.id">
                 <input type="checkbox" v-model="todo.isCompleted">
                 {{todo.name}}
             </li>
