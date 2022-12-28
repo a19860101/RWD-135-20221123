@@ -50,37 +50,44 @@
             text-align: center;
             
         }
+        .not-found {
+            text-align: center;
+            font-size: 20px;
+        }
     </style>
 
 </head>
 <body>
     <div id="app">
         <div class="search">
-            <input type="text" v-model="title"@keyup.enter="getMovies()">
+            <input type="text" v-model="title" @keyup.enter="getMovies()">
             <button @click="getMovies()">搜尋</button>
         </div>
-        <div class="page" v-if="movies != ''">
-            <a href="#" @click="getPrev()" v-if="currentPage != 1">上一頁</a>
-            <a href="#" @click="getNext()" v-if="currentPage != totalPages">下一頁</a>
-            {{currentPage}} / {{totalPages}}
-        </div>
-        <div class="container">
-            <div v-for="movie in movies" class="item">
-                <div class="poster">
-                    <template v-if="movie.Poster === 'N/A'">
-                        <img src="https://picsum.photos/id/33/500/700" alt="">
-                    </template>
-                    <template v-else><img :src="movie.Poster" alt=""></template>
-                </div>
-                <h2>{{movie.Title}}</h2>
-                <div>{{movie.Year}}</div>
+        <div v-if="res==='False'" class="not-found">找不到包含{{this.result}}名稱的電影，請重新搜尋</div>
+        <template v-else>
+            <div class="page" v-if="movies != ''">
+                <a href="#" @click="getPrev()" v-if="currentPage != 1">上一頁</a>
+                <a href="#" @click="getNext()" v-if="currentPage != totalPages">下一頁</a>
+                {{currentPage}} / {{totalPages}}
             </div>
-        </div>
-        <div class="page" v-if="movies != ''">
-            <a href="#" @click="getPrev()" v-if="currentPage != 1">上一頁</a>
-            <a href="#" @click="getNext()" v-if="currentPage != totalPages">下一頁</a>
-            {{currentPage}} / {{totalPages}}
-        </div>
+            <div class="container">
+                <div v-for="movie in movies" class="item">
+                    <div class="poster">
+                        <template v-if="movie.Poster === 'N/A'">
+                            <img src="https://picsum.photos/id/33/500/700" alt="">
+                        </template>
+                        <template v-else><img :src="movie.Poster" alt=""></template>
+                    </div>
+                    <h2>{{movie.Title}}</h2>
+                    <div>{{movie.Year}}</div>
+                </div>
+            </div>
+            <div class="page" v-if="movies != ''">
+                <a href="#" @click="getPrev()" v-if="currentPage != 1">上一頁</a>
+                <a href="#" @click="getNext()" v-if="currentPage != totalPages">下一頁</a>
+                {{currentPage}} / {{totalPages}}
+            </div>
+        </template>
     </div>    
     <script>
         // 18456e59
@@ -91,7 +98,9 @@
                     title:'spider',
                     movies:'',
                     currentPage: 1,
-                    totalPages:''
+                    totalPages:'',
+                    res:'',
+                    result:'',
                 }
             },
             methods:{
@@ -104,7 +113,8 @@
                         console.log(data);
                         this.movies = data.Search;
                         this.totalPages = Math.ceil(data.totalResults / 10);
-
+                        this.res = data.Response;
+                        this.result = this.title;
                     })
                 },
                 getNext(){
