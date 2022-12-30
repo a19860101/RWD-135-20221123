@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <style>
         * {
@@ -20,7 +21,9 @@
             margin-inline: auto;
         }
         .collapse-btn {
-            display: block;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
             padding: 15px;
             background-color: #fff672;
             text-decoration: none;
@@ -34,6 +37,12 @@
         .collapse-btn.active {
             background-color: #4ec1ff;
         }
+        .collapse-btn i {
+            transition: 600ms;
+        }
+        .collapse-btn.active i{
+            transform: rotate(225deg);
+        }
         .collapse-panel {
             padding: 15px;
             background-color: #fffaad;
@@ -45,7 +54,7 @@
     <div class="collapse">
         <a href="#" class="collapse-btn" data-panel="#panel-1">
             Panel 1
-            <i class="fa-solid fa-chevron-down"></i>
+            <i class="fa-solid fa-plus fa-xl"></i>
         </a>
         <div class="collapse-panel" id="panel-1">
             <h2>Panel 1</h2>
@@ -55,10 +64,21 @@
         </div>
         <a href="#" class="collapse-btn" data-panel="#panel-2">
             Panel 2
-            <i class="fa-solid fa-chevron-down"></i>
+            <i class="fa-solid fa-plus fa-xl"></i>
         </a>
         <div class="collapse-panel" id="panel-2">
             <h2>Panel 2</h2>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus praesentium quis incidunt, in ex eius distinctio, autem numquam dignissimos laboriosam veritatis voluptates minima ratione nisi ea? Omnis exercitationem dolorum optio necessitatibus possimus incidunt, eos molestiae aspernatur quibusdam? Quasi veritatis dolore distinctio, dolorem magni ipsam, esse ipsum voluptates molestiae fugit soluta!
+            </p>
+        </div>
+    
+        <a href="#" class="collapse-btn" data-panel="#panel-3">
+            Panel 3
+            <i class="fa-solid fa-plus fa-xl"></i>
+        </a>
+        <div class="collapse-panel" id="panel-2">
+            <h2>Panel 3</h2>
             <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus praesentium quis incidunt, in ex eius distinctio, autem numquam dignissimos laboriosam veritatis voluptates minima ratione nisi ea? Omnis exercitationem dolorum optio necessitatibus possimus incidunt, eos molestiae aspernatur quibusdam? Quasi veritatis dolore distinctio, dolorem magni ipsam, esse ipsum voluptates molestiae fugit soluta!
             </p>
@@ -67,7 +87,10 @@
     <script>
         $(function(){
             $('.collapse-btn').click(function(){
+                $(this).toggleClass('active');
                 $(this).next().slideToggle();
+                // $(this).next().toggle(600);
+                // $(this).next().fadeToggle();
             })
         })
     </script>
