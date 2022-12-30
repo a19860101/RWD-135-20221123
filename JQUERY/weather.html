@@ -6,6 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI';
+        }
+        .box {
+            width: fit-content;
+            height: fit-content;
+            background-color: #ccc;
+            padding: 30px;
+            position: absolute;
+            inset:0;
+            margin: auto;
+            border-radius: 10px;
+            font-size: 2rem;
+        }
+    </style>
 </head>
 <body>
     <div class="weather-box">
@@ -24,11 +45,25 @@
                 },
                 success(data){
                     console.log(data);
+                    let myDate = new Date(data.dt * 1000);
+                    let year = myDate.getFullYear();
+                    let month = myDate.getMonth()+1;
+                    let date = myDate.getDate();
+                    let day = myDate.getDay();
+                    let hour = myDate.getHours();
+                    let minute = myDate.getMinutes();
+                    let second = myDate.getSeconds();
+                    console.log(year,month,date,day,hour,minute,second);
                     let content = `
+                        <div class="box">
+                        <div>${year}年${month}/${date}</div>
+                        <div></div>
+                        <div>${hour}:${minute}</div>
                         <div>體感溫度${data.main.feels_like}</div>
                         <div>平均溫度${data.main.temp}</div>
                         <div>最低溫${data.main.temp_min}</div>
                         <div>最高溫${data.main.temp_max}</div>
+                        </div>
                     `
                     $('.weather-box').append(content);
                 },
