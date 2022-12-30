@@ -22,7 +22,9 @@
 </head>
 <body>
     <div>
-        <select name="" id="sarea"></select>
+        <select name="" id="sarea">
+            <option>--請選擇區域--</option>
+        </select>
     </div>
     <div class="container">
 
@@ -40,22 +42,36 @@
                         $('#sarea').append(`<option value="${ar}">${ar}</option>`);
                     }
                     $('select').change(function(){
+                        $('.container').empty();
                         let s = $(this).val();
-                        console.log(s);
+                        let result = datas.filter(data => data.sarea === s)
+                        console.log(result);
+                        for(let data of result){
+                            let content = `
+                            <div class="youbike">
+                                <div>${data.sna}</div>
+                                <div>共有${data.tot}輛車</div>
+                                <div>目前空位:${data.bemp}</div>
+                                <div>剩餘車輛:${data.sbi}</div>
+                                <div>站點地址:${data.ar}</div>
+                            </div>
+                            `;
+                            $('.container').append(content)
+                        }
                     })
                     console.log(area);
-                    for(let data of datas){
-                        let content = `
-                        <div class="youbike">
-                            <div>${data.sna}</div>
-                            <div>共有${data.tot}輛車</div>
-                            <div>目前空位:${data.bemp}</div>
-                            <div>剩餘車輛:${data.sbi}</div>
-                            <div>站點地址:${data.ar}</div>
-                        </div>
-                        `;
-                        $('.container').append(content)
-                    }
+                    // for(let data of datas){
+                    //     let content = `
+                    //     <div class="youbike">
+                    //         <div>${data.sna}</div>
+                    //         <div>共有${data.tot}輛車</div>
+                    //         <div>目前空位:${data.bemp}</div>
+                    //         <div>剩餘車輛:${data.sbi}</div>
+                    //         <div>站點地址:${data.ar}</div>
+                    //     </div>
+                    //     `;
+                    //     $('.container').append(content)
+                    // }
                 },
                 error:function(){
                     console.log('error');
