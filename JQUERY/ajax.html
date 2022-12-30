@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <style>
+        .container {
+            max-width: 1200px;
+            margin-inline: auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+            gap:15px;
+        }
+        .youbike {
+            background-color: #ccc;
+            padding: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <select name="" id="sarea"></select>
+    </div>
+    <div class="container">
+
+    </div>
+    <script>
+        $(function(){
+            let url ='https://tcgbusfs.blob.core.windows.net/dotapp/youbike/v2/youbike_immediate.json';
+            $.ajax({
+                url:url,
+                success:function(datas){
+                    console.log(datas);
+                    let sarea = datas.map(d => d.sarea);
+                    let area = Array.from(new Set(sarea));
+                    for(let ar of area){
+                        $('#sarea').append(`<option value="${ar}">${ar}</option>`);
+                    }
+                    $('select').change(function(){
+                        let s = $(this).val();
+                        console.log(s);
+                    })
+                    console.log(area);
+                    for(let data of datas){
+                        let content = `
+                        <div class="youbike">
+                            <div>${data.sna}</div>
+                            <div>共有${data.tot}輛車</div>
+                            <div>目前空位:${data.bemp}</div>
+                            <div>剩餘車輛:${data.sbi}</div>
+                            <div>站點地址:${data.ar}</div>
+                        </div>
+                        `;
+                        $('.container').append(content)
+                    }
+                },
+                error:function(){
+                    console.log('error');
+                }
+            })
+        })
+    </script>
+</body>
+</html>
