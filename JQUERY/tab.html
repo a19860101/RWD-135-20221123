@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Gill Sans MT';
+        }
+        .tab {
+            width: 600px;
+            margin-inline: auto;
+            position: relative;
+        }
+        .tab-nav {
+            display: flex;
+            width: 100%;
+            align-items: center;
+            background-color: #222;
+            padding-inline: 15px;
+            position: relative;
+            z-index: 10;
+        }
+        .tab-link {
+            text-decoration: none;
+            color: #eee;
+            text-transform: uppercase;
+            padding: 15px;
+            transition: 800ms;
+        }
+        .tab-link.active {
+            color: #ff2c3e;
+            background-color: #fff6b2;
+        }
+        .tab-panel {
+            padding: 15px;
+            background-color: #ccc;
+            display: none;
+            position: absolute;
+        }
+        .tab-panel.active {
+            display: block;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="tab">
+        <div class="tab-nav">
+            <a href="#tab-1" data-panel="#tab-1" class="tab-link active">tab 1</a>
+            <a href="#tab-2" data-panel="#tab-2" class="tab-link">tab 2</a>
+            <a href="#tab-3" data-panel="#tab-3" class="tab-link">tab 3</a>
+        </div>
+        <div class="tab-panel active" id="tab-1">
+            <h3>tab 1</h3>
+            <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rem delectus provident porro sit repellendus saepe debitis! Ipsum iusto fuga culpa sed, facilis debitis velit animi accusamus, sequi earum consequatur numquam?
+            </p>
+        </div>
+        <div class="tab-panel" id="tab-2">
+            <h3>tab 2</h3>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique ratione laudantium libero architecto inventore, soluta laborum perferendis odio impedit magni dicta aliquam quaerat vel! Nostrum id nisi tenetur pariatur voluptatum?
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur doloremque quos rem, vitae, eos ipsum laboriosam placeat exercitationem ratione nulla modi dignissimos, dolore excepturi nam accusantium aperiam sed in rerum.
+
+            </p>
+            <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nulla quidem amet, autem saepe aliquid numquam necessitatibus molestiae esse optio ducimus deserunt officiis, accusamus eum commodi. Dolore labore neque natus vel!
+            </p>
+        </div>
+        <div class="tab-panel" id="tab-3">
+            <h3>tab 3</h3>
+            <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rem delectus provident porro sit repellendus saepe debitis! Ipsum iusto fuga culpa sed, facilis debitis velit animi accusamus, sequi earum consequatur numquam?
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci enim obcaecati explicabo cumque soluta illo odio, omnis voluptas, accusamus tempora laboriosam unde alias blanditiis assumenda architecto totam eaque quae perspiciatis?
+            </p>
+        </div>
+    </div>
+    <script>
+        $(function(){
+            $('.tab-link').click(function(){
+                $('.tab-link.active').removeClass('active');
+                $(this).addClass('active');
+                let panel = $(this).data('panel');
+                $('.tab-panel').fadeOut();
+                $(panel).fadeIn();
+            })
+        })
+    </script>
+</body>
+</html>
