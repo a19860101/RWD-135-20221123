@@ -54,10 +54,13 @@
                     let minute = myDate.getMinutes();
                     let second = myDate.getSeconds();
                     console.log(year,month,date,day,hour,minute,second);
+                    const DAY = ['日','一','二','三','四','五','六'];
+                    const DAY_FULL = ['星期日','星期一','星期二','星期三','星期四','星期五','星期六'];
+                    const DAY_jp = ['日','月','火','水','木','金','土'];
                     let content = `
                         <div class="box">
-                        <div>${year}年${month}/${date}</div>
-                        <div></div>
+                        <div>${year}年${month}/${date}(${DAY[day]})</div>
+                        <div>${DAY_FULL[day]}</div>
                         <div>${hour}:${minute}</div>
                         <div>體感溫度${data.main.feels_like}</div>
                         <div>平均溫度${data.main.temp}</div>
