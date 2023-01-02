@@ -9,6 +9,34 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        #banner {
+            width: 1200px;
+            margin-inline: auto;
+        }
+        #banner img {
+            display: block;
+            width: 100%;
+        }
+        .banner-item {
+            position: relative;
+        }
+        .banner-text {
+            position: absolute;
+            background-color: #fa0;
+            inset:0;
+            margin:auto;
+            width: fit-content;
+            height: fit-content;
+            padding: 30px;
+            border-radius: 10px;
+        }
+    </style>
 </head>
 <body>
     <div id="banner">
@@ -43,5 +71,10 @@
             </div>
         </div>
     </div>
+    <script>
+        $(function(){
+            $('#banner').slick();
+        })
+    </script>
 </body>
 </html>
