@@ -15,6 +15,9 @@
             padding: 0;
             box-sizing: border-box;
         }
+        body {
+            background-color: #ff5f5f;
+        }
         #banner {
             width: 1200px;
             margin-inline: auto;
@@ -35,6 +38,10 @@
             height: fit-content;
             padding: 30px;
             border-radius: 10px;
+        }
+        #products {
+            max-width: 1200px;
+            margin-inline: auto;
         }
     </style>
 </head>
@@ -71,9 +78,35 @@
             </div>
         </div>
     </div>
+    <div id="products">
+        <img src="https://picsum.photos/id/87/600" alt="">
+        <img src="https://picsum.photos/id/17/600" alt="">
+        <img src="https://picsum.photos/id/27/600" alt="">
+        <img src="https://picsum.photos/id/37/600" alt="">
+        <img src="https://picsum.photos/id/47/600" alt="">
+        <img src="https://picsum.photos/id/57/600" alt="">
+        <img src="https://picsum.photos/id/67/600" alt="">
+        <img src="https://picsum.photos/id/77/600" alt="">
+        <img src="https://picsum.photos/id/98/600" alt="">
+        <img src="https://picsum.photos/id/107/600" alt="">
+        <img src="https://picsum.photos/id/117/600" alt="">
+        <img src="https://picsum.photos/id/127/600" alt="">
+        <img src="https://picsum.photos/id/137/600" alt="">
+        <img src="https://picsum.photos/id/147/600" alt="">
+    </div>
     <script>
         $(function(){
-            $('#banner').slick();
+            $('#banner').slick({
+                autoplay: true,
+                dots: true,
+                arrows: true,
+            });
+            $('#products').slick({
+                dots:true,
+                arrows:true,
+                slidesToShow: 5,
+                slidesToScroll: 1
+            })
         })
     </script>
 </body>
