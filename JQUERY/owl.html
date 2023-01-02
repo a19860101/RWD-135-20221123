@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background-color: #ff5f5f;
+        }
+        #banner {
+            max-width: 1200px;
+            width: 90%;
+            margin-inline: auto;
+        }
+        #banner img {
+            display: block;
+            width: 100%;
+        }
+        .banner-item {
+            position: relative;
+        }
+        .banner-text {
+            position: absolute;
+            background-color: #fa0;
+            inset:0;
+            margin:auto;
+            width: fit-content;
+            height: fit-content;
+            padding: 30px;
+            border-radius: 10px;
+        }
+        #products {
+            max-width: 1200px;
+            width: 90%;
+            margin-inline: auto;
+        }
+       
+    
+    </style>
+</head>
+<body>
+    <div id="banner" class="owl-theme owl-carousel">
+        <div class="banner-item">
+            <img src="https://picsum.photos/1200/600?random=1" alt="">
+            <div class="banner-text">
+                <h4>Random 1</h4>
+            </div>
+        </div>
+        <div class="banner-item">
+            <img src="https://picsum.photos/1200/600?random=2" alt="">
+            <div class="banner-text">
+                <h4>Random 2</h4>
+            </div>
+        </div>
+        <div class="banner-item">
+            <img src="https://picsum.photos/1200/600?random=3" alt="">
+            <div class="banner-text">
+                <h4>Random 3</h4>
+            </div>
+        </div>
+        <div class="banner-item">
+            <img src="https://picsum.photos/1200/600?random=4" alt="">
+            <div class="banner-text">
+                <h4>Random 4</h4>
+            </div>
+        </div>
+        <div class="banner-item">
+            <img src="https://picsum.photos/1200/600?random=5" alt="">
+            <div class="banner-text">
+                <h4>Random 5</h4>
+            </div>
+        </div>
+    </div>
+    <div id="products" class="owl-theme owl-carousel">
+        <img src="https://picsum.photos/id/87/600" alt="">
+        <img src="https://picsum.photos/id/17/600" alt="">
+        <img src="https://picsum.photos/id/27/600" alt="">
+        <img src="https://picsum.photos/id/37/600" alt="">
+        <img src="https://picsum.photos/id/47/600" alt="">
+        <img src="https://picsum.photos/id/57/600" alt="">
+        <img src="https://picsum.photos/id/67/600" alt="">
+        <img src="https://picsum.photos/id/77/600" alt="">
+        <img src="https://picsum.photos/id/98/600" alt="">
+        <img src="https://picsum.photos/id/107/600" alt="">
+        <img src="https://picsum.photos/id/117/600" alt="">
+        <img src="https://picsum.photos/id/127/600" alt="">
+        <img src="https://picsum.photos/id/137/600" alt="">
+        <img src="https://picsum.photos/id/147/600" alt="">
+    </div>
+    <script>
+        $(function(){
+            $('#banner').owlCarousel({
+                items: 1,
+                loop: true,
+                autoplay: true,
+                nav: true,
+                dots: true,
+                autoplayTimeout: 6000,
+                autoplaySpeed: 2000,
+                navSpeed:2000,
+                dotsSpeed:2000
+            });
+            $('#products').owlCarousel({
+                items: 6,
+                center: true,
+                loop: true,
+                margin: 10,
+                dotsSpeed: 1200
+            });
+        })
+    </script>
+</body>
+</html>
