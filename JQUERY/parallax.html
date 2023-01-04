@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/simple-parallax-js@5.5.1/dist/simpleParallax.min.js"></script>
+    <style>
+        body {
+            height: 2000px;
+        }
+        header {
+            width: 100%;
+            height: 300px;
+        }
+        #banner {
+            width: 100%;
+            height: 300px;
+            overflow: hidden;
+        }
+        /* img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        } */
+    </style>
+</head>
+<body>
+    <header></header>
+    <div id="banner">
+        <img src="https://picsum.photos/id/87/1200/1000" alt="" class="thumbnail">
+    </div>
+    <div class="container">
+        <h2>title</h2>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi perferendis alias hic distinctio voluptates, dicta natus quod unde tempora nostrum dolores error autem sequi! Nisi blanditiis odit quisquam dolores? Numquam.
+        </p>
+    </div>
+    <script>
+        var image = document.getElementsByClassName('thumbnail');
+        new simpleParallax(image,{
+            orientation:'right',
+            scale:'3',
+            delay: 4,
+            overflow: true
+        });
+    </script>
+</body>
+</html>
