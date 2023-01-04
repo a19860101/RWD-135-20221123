@@ -99,25 +99,25 @@
     </section>
     <section id="service">
         <div class="container">
-            <div class="col">
+            <div class="col" data-aos="fade-down" data-aos-delay="0">
                 <h2>title</h2>
                 <p>
                     Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quia neque corrupti minus doloribus eaque harum ut recusandae tenetur provident atque inventore consequuntur corporis nostrum consectetur, ipsum voluptate mollitia odio culpa?
                 </p>
             </div>
-            <div class="col">
+            <div class="col" data-aos="fade-down" data-aos-delay="300">
                 <h2>title</h2>
                 <p>
                     Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quia neque corrupti minus doloribus eaque harum ut recusandae tenetur provident atque inventore consequuntur corporis nostrum consectetur, ipsum voluptate mollitia odio culpa?
                 </p>
             </div>
-            <div class="col">
+            <div class="col" data-aos="fade-down" data-aos-delay="600">
                 <h2>title</h2>
                 <p>
                     Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quia neque corrupti minus doloribus eaque harum ut recusandae tenetur provident atque inventore consequuntur corporis nostrum consectetur, ipsum voluptate mollitia odio culpa?
                 </p>
             </div>
-            <div class="col">
+            <div class="col" data-aos="fade-down" data-aos-delay="900">
                 <h2>title</h2>
                 <p>
                     Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quia neque corrupti minus doloribus eaque harum ut recusandae tenetur provident atque inventore consequuntur corporis nostrum consectetur, ipsum voluptate mollitia odio culpa?
@@ -127,13 +127,13 @@
     </section>
     <section id="contact">
         <div class="container">
-            <div class="col">
+            <div class="col" data-aos="zoom-in">
                 <h2>title</h2>
                 <p>
                     Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quia neque corrupti minus doloribus eaque harum ut recusandae tenetur provident atque inventore consequuntur corporis nostrum consectetur, ipsum voluptate mollitia odio culpa?
                 </p>
             </div>
-            <div class="col">
+            <div class="col" data-aos="zoom-in">
                 <h2>title</h2>
                 <p>
                     Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quia neque corrupti minus doloribus eaque harum ut recusandae tenetur provident atque inventore consequuntur corporis nostrum consectetur, ipsum voluptate mollitia odio culpa?
@@ -143,6 +143,11 @@
     </section>
     <script>
         AOS.init();
+        AOS.init({
+            easing: 'ease-out-back',
+            duration: 600,
+            anchorPlacement: 'bottom-bottom',
+        })
     </script>
 </body>
 </html>
