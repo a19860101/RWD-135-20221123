@@ -14,18 +14,35 @@ export default {
                     name:'洗碗',
                     isCompleted: false
                 }
-            ]
+            ],
+            input:''
+        }
+    },
+    methods:{
+        add(){
+            this.lists.push({
+                id: Date.now(),
+                name: this.input,
+                isCompleted: false
+            });
+            this.input = '';
         }
     }
 }
 </script>
 <template>
     <div class="p-3">
-        <h1 class="text-4xl font-bold">{{title}}</h1>
-        <ul>
-            <li v-for="list in lists" :key="list.id">
-                {{list.name}}
-                <input type="checkbox" v-model="list.isCompleted">    
+        <h1 class="text-4xl font-bold mb-3">{{title}}</h1>
+        <form action="" class="mb-3">
+            <input type="text" v-model="input" class="border border-teal-600 rounded-lg p-2 mr-3">
+            <input type="submit" class="btn" @click="add()">
+        </form>
+        <ul class="w-[400px] space-y-3">
+            <li v-for="list in lists" :key="list.id" class="w-full flex bg-teal-200 p-3 rounded-lg">
+                <div class="grow">{{list.name}}</div>
+                <form action="" class="w-5 text-center">
+                    <input type="checkbox" v-model="list.isCompleted">    
+                </form>
             </li>
         </ul>
     </div>
