@@ -1,0 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.btn {
+  @apply bg-teal-300 text-teal-900 px-3 py-2 rounded hover:bg-teal-500 inline-block
+}
