@@ -1,5 +1,5 @@
 <script>
-import Item from './Item.vue'
+import Todo from './Todo.vue'
 export default {
     data(){
         return {
@@ -35,7 +35,7 @@ export default {
         }
     },
     components:{
-        Item
+        Todo
     },
     methods:{
         add(){
@@ -64,7 +64,6 @@ export default {
 </script>
 <template>
     <div class="p-3">
-        <Item></Item>
         <h1 class="text-4xl font-bold mb-3">{{title}}</h1>
         <form action="" class="mb-3">
             <input type="text" v-model="input" class="border border-teal-600 rounded-lg p-2 mr-3">
@@ -74,36 +73,8 @@ export default {
             </select>
             <input type="submit" class="btn" @click.prevent="add()">
         </form>
-        <h2 v-show="todoUnComplete.length > 0">未完成</h2>
-        <ul class="w-[400px] space-y-3">
-            <li v-for="list in todoUnComplete" :key="list.id" class="w-full flex bg-teal-200 p-3 rounded-lg">
-                <div class="grow">
-                    {{list.name}}
-
-                    <span class="rounded bg-rose-500 px-1 text-sm" v-if="list.tag==='重要'">{{list.tag}}</span>
-                    <span class="rounded bg-amber-500 px-1 text-sm" v-if="list.tag==='急件'">{{list.tag}}</span>
-                    <span class="rounded bg-blue-500 px-1 text-sm" v-if="list.tag==='普通'">{{list.tag}}</span>
-                </div>
-                <form action="" class="w-5 text-center">
-                    <input type="checkbox" v-model="list.isCompleted">    
-                </form>
-            </li>
-        </ul>
-        <div class="py-3"></div>
-        <h2 v-show="todoComplete.length > 0">已完成</h2>
-        <ul class="w-[400px] space-y-3">
-            <li v-for="list in todoComplete" :key="list.id" class="w-full flex bg-teal-200 p-3 rounded-lg">
-                <div class="grow">{{list.name}}
-                    <span class="rounded bg-rose-500 px-1 text-sm" v-if="list.tag==='重要'">{{list.tag}}</span>
-                    <span class="rounded bg-amber-500 px-1 text-sm" v-if="list.tag==='急件'">{{list.tag}}</span>
-                    <span class="rounded bg-blue-500 px-1 text-sm" v-if="list.tag==='普通'">{{list.tag}}</span>
-                </div>
-                
-                <form action="" class="w-5 text-center">
-                    <input type="checkbox" v-model="list.isCompleted">    
-                </form>
-            </li>
-        </ul>
+        <Todo title="未完成" :lists="todoUnComplete"></Todo>
+        <Todo title="已完成" :lists="todoComplete"></Todo>
        
     </div>
 
