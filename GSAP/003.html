@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div class="one font-bold text-4xl">ONE</div>
+    <div class="two font-bold text-4xl">TWO</div>
+    <div class="three font-bold text-4xl">THREE</div>
+    <div class="four font-bold text-4xl">FOUR</div>
+    <script>
+        // gsap.defaults({duration:1})
+        // let tl = gsap.timeline();
+
+        gsap.timeline()
+        .to('.one',{x:500,duration:1.5})
+        .to('.two',{x:500,duration:1})
+        .to('.three',{x:500,duration:2})
+        .to('.four',{x:500,duration:1})
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div class="overlay w-full h-screen bg-rose-600 fixed"></div>
+    <div class="w-[800px] flex mx-auto items-center h-screen">
+        <div class="cover aspect-square">
+            <img src="https://picsum.photos/id/44/800" class="w-full h-full object-cover">
+        </div>
+        <div class="pl-3">
+            <h2 class="t">title</h2>
+            <p class="t">
+                Lorem ipsum dolor sit amet, coiat quos, labore magnam dolor reiciendis vel optio quisquam? Dolorum enim libero dolores magnam aliquid vitae eius?
+            </p class="t">
+            <a href="#" class="t">Link</a>
+        </div>
+    </div>
+    <script>
+        gsap.timeline()
+        .to('.overlay',{y:'-100%',delay:1,duration:1})
+        .from('.cover',{x: '-100%',opacity:0,duration:1})
+        .from('.t',{opacity:0,x:30,stagger:{
+            amount:1,
+        },duration:1})
+    </script>
+</body>
+</html>
