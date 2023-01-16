@@ -14,5 +14,6 @@
     <!-- <Todos></Todos>。 -->
     <h1 class="text-3xl font-bold bg-lime-300 p-4">My Vite</h1>
     <Nav></Nav>
+    <router-view></router-view>
   </div>
 </template>
