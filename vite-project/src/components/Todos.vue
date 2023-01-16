@@ -26,6 +26,7 @@ export default {
                 isCompleted: false
             });
             this.input = '';
+            
         }
     },
     computed:{
@@ -43,7 +44,7 @@ export default {
         <h1 class="text-4xl font-bold mb-3">{{title}}</h1>
         <form action="" class="mb-3">
             <input type="text" v-model="input" class="border border-teal-600 rounded-lg p-2 mr-3">
-            <input type="submit" class="btn" @click="add()">
+            <input type="submit" class="btn" @click.prevent="add()">
         </form>
         <h2 v-show="todoUnComplete.length > 0">未完成</h2>
         <ul class="w-[400px] space-y-3">
